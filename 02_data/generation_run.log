@@ -1,0 +1,16 @@
+prompts: 20 pairs | already done: 0 | cuda: True
+[qwen2.5-0.5b] Qwen/Qwen2.5-0.5B-Instruct@7ae557604adf67be50417f59c2c2f167def9a775 on cuda:0 (torch.bfloat16), 120 generations
+  20/120  last: 31 tok in 1.144s (eos)
+  40/120  last: 208 tok in 7.627s (eos)
+  60/120  last: 256 tok in 9.081s (length)
+  80/120  last: 31 tok in 1.088s (eos)
+  100/120  last: 256 tok in 9.154s (length)
+  120/120  last: 256 tok in 9.083s (length)
+[qwen2.5-1.5b] Qwen/Qwen2.5-1.5B-Instruct@989aa7980e4cf806f80c7fef2b1adb7bc71aa306 on cuda:0 (torch.bfloat16), 120 generations
+  20/120  last: 32 tok in 1.323s (eos)
+  40/120  last: 148 tok in 6.122s (eos)
+  60/120  last: 256 tok in 10.575s (length)
+  80/120  last: 195 tok in 8.229s (eos)
+  100/120  last: 256 tok in 10.685s (length)
+  120/120  last: 256 tok in 11.457s (length)
+done: 240 responses in ..\02_data\responses_raw.jsonl

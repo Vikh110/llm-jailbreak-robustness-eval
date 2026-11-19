@@ -1,0 +1,50 @@
+% Styling for the project guide (used by pandoc -> xelatex)
+\usepackage{fancyhdr}
+\usepackage[most]{tcolorbox}
+\usepackage{float}
+\floatplacement{figure}{H}
+\usepackage{fvextra}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\},fontsize=\footnotesize}
+\fvset{breaklines=true,breakanywhere=true,fontsize=\footnotesize}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{needspace}
+\setlist{itemsep=2pt,topsep=4pt}
+\definecolor{gblue}{HTML}{0B3C8C}
+\definecolor{gnavy}{HTML}{002D49}
+\definecolor{gteal}{HTML}{0F766E}
+\definecolor{gamber}{HTML}{B45309}
+\definecolor{gpurple}{HTML}{6D28D9}
+\definecolor{gred}{HTML}{B91C1C}
+\definecolor{ggrey}{HTML}{4B5563}
+% \chaptertitlename prints "Chapter" in the main part and "Appendix" after \appendix
+\titleformat{\chapter}[display]{\sffamily\bfseries\color{gnavy}}{\large \chaptertitlename\ \thechapter}{6pt}{\huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{18pt}
+\titleformat{\section}{\sffamily\bfseries\Large\color{gnavy}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\sffamily\bfseries\large\color{gnavy}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\normalsize\color{gnavy}}{}{0em}{}
+% Callout boxes are kept in one piece so that no single line is stranded on the next page
+\newtcolorbox{calloutbox}[2]{enhanced,colback=#2!5!white,colframe=#2!85!black,coltitle=white,
+  title={#1},fonttitle=\sffamily\bfseries\small,boxrule=0.6pt,arc=2pt,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  before skip=10pt,after skip=10pt}
+\pagestyle{fancy}
+% The running header is kept in a macro that is set when a chapter starts. (LaTeX "marks" are
+% lost when a long table breaks across the page on which the chapter begins.)
+\makeatletter
+\newcommand{\guidehead}{Contents}
+\renewcommand{\chaptermark}[1]{\protected@xdef\guidehead{\@chapapp\ \thechapter.\ #1}}
+\renewcommand{\sectionmark}[1]{}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.9em}}
+\makeatother
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\color{ggrey}\guidehead}
+\fancyhead[R]{\small\sffamily\color{ggrey}Project guide}
+\fancyfoot[C]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\sffamily\thepage}\renewcommand{\headrulewidth}{0pt}}
+\setlength{\headheight}{14pt}
+\renewcommand{\arraystretch}{1.25}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
+\linespread{1.08}
+\AtBeginDocument{\def\UrlBreaks{\do\/\do\_\do\-\do\.}\urlstyle{tt}}

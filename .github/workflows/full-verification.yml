@@ -1,0 +1,39 @@
+name: Full verification (model weights)
+
+# Downloads the three pinned models (~5 GB of weights) and runs the complete
+# 26-check verification, including the SHA-256 of every weight file against
+# the freeze manifest. Manual trigger only, because of the download size.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-verify:
+    name: Verify against the pinned model weights
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Hugging Face Hub client
+        run: python -m pip install huggingface_hub
+
+      - name: Download pinned model weights
+        working-directory: 03_pipeline
+        run: python 00_download_models.py --weights-only
+
+      - name: Full verification (26 checks incl. weight hashes)
+        run: python 03_pipeline/07_verify.py
+
+      - name: Report is identical to the committed one
+        # the committed report was written on Windows (CRLF); compare the text, not the line endings
+        run: |
+          git show HEAD:04_results/verification_report.txt | tr -d '\r' > /tmp/committed.txt
+          tr -d '\r' < 04_results/verification_report.txt > /tmp/rerun.txt
+          diff /tmp/committed.txt /tmp/rerun.txt && echo "verification report identical to the committed one"

@@ -1,0 +1,16 @@
+# Tool configuration only. The project is a set of numbered pipeline scripts, not an installable package.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 140
+extend-exclude = ["models_cache", ".venv"]
+
+[tool.ruff.lint]
+# Hard errors only: syntax errors, undefined names, invalid comparisons.
+# Several pipeline files are hashed in the freeze manifest and must stay byte-identical,
+# so style-only rules are not enforced on them.
+select = ["E9", "F63", "F7", "F82"]

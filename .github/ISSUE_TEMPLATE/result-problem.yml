@@ -1,0 +1,32 @@
+name: Problem with a result
+description: A number, label or table that looks wrong or cannot be reproduced
+labels: ["results"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not paste harmful model output here. Refer to responses by their `response_id` (for example `qwen2.5-0.5b|P13|benign|prefix_steering`).
+  - type: input
+    id: location
+    attributes:
+      label: Where
+      description: File and row, field or section (for example `04_results/metrics.csv`, row qwen2.5-1.5b / direct / over_refusal)
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected and what you found
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: Commands you ran, and the output of `python 03_pipeline/07_verify.py --skip-weights`
+      render: shell
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python version, and GPU if you re-ran generation

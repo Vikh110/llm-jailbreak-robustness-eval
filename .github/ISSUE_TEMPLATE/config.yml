@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the report first
+    url: https://github.com/Vikh110/llm-jailbreak-robustness-eval/blob/main/05_report/Report.md
+    about: Method, results and the twelve stated limitations

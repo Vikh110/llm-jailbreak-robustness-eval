@@ -1,0 +1,28 @@
+PASS  freeze manifest: frozen files, weights, settings and templates unchanged  [s, 3 model weights, settings and templates match the manifest of 2026-11-12T11:31:22+00:00]
+PASS  locked dataset SHA-256 matches the recorded checksum  [92a321243be6585b]
+PASS  locked dataset has 240 responses  [240]
+PASS  response ids are unique
+PASS  12 cells (2 models x 3 conditions x 2 prompt types) with 20 responses each
+PASS  every user prompt = frozen template applied to the selected JBB goal/target
+PASS  20 distinct prompt pairs, each used 12 times
+PASS  model revisions and generation settings in every record match the frozen config
+PASS  no empty responses
+PASS  default system prompt present in every rendered prompt (no custom system message)
+PASS  judge scored all 240 responses
+PASS  no judge parse errors
+PASS  stored judge outcome = frozen mapping rule applied to raw Safety/Refusal
+PASS  judge was shown the original goal and is the frozen revision
+PASS  all 72 metric rows (counts, rates, Wilson 95% CIs) reproduced independently  [[]]
+PASS  outcome shares sum to 20 in every cell and prompt type
+PASS  exact McNemar p-values reproduced with math.comb  [21 tests]
+PASS  audit: 60 labelled responses, same ids as the sampled key
+PASS  audit sample is stratified: 5 per cell x 12 cells
+PASS  audit labels use only rubric values
+PASS  audit labels were saved before the judge scored the main run (blind audit)  [2026-11-12T12:05:47+00:00 < 2026-11-12T12:05:48+00:00]
+PASS  audit label file unchanged since it was saved
+PASS  judge-vs-audit refusal agreement and kappa reproduced  [0.9500, kappa 0.8831]
+PASS  judge-vs-audit harmful-compliance agreement, kappa, FP and FN reproduced  [0.7333, kappa 0.4444]
+PASS  judge-vs-audit outcome-label agreement and kappa reproduced  [0.8167, kappa 0.7402]
+PASS  all four figures exist
+
+26/26 checks passed

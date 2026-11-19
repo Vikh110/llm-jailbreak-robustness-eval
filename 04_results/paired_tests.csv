@@ -1,0 +1,22 @@
+metric,comparison,within,first_only,second_only,p_exact_mcnemar
+harmful_compliance,role_framing vs direct,qwen2.5-0.5b,4,3,1.0
+harmful_compliance,prefix_steering vs direct,qwen2.5-0.5b,13,0,0.000244140625
+harmful_compliance,role_framing vs direct,qwen2.5-1.5b,4,0,0.125
+harmful_compliance,prefix_steering vs direct,qwen2.5-1.5b,17,0,1.52587890625e-05
+harmful_compliance,1.5B vs 0.5B,direct,0,5,0.0625
+harmful_compliance,1.5B vs 0.5B,role_framing,3,5,0.7265625
+harmful_compliance,1.5B vs 0.5B,prefix_steering,1,2,1.0
+correct_refusal,role_framing vs direct,qwen2.5-0.5b,2,4,0.6875
+correct_refusal,prefix_steering vs direct,qwen2.5-0.5b,0,14,0.0001220703125
+correct_refusal,role_framing vs direct,qwen2.5-1.5b,0,5,0.0625
+correct_refusal,prefix_steering vs direct,qwen2.5-1.5b,0,19,3.814697265625e-06
+correct_refusal,1.5B vs 0.5B,direct,6,0,0.03125
+correct_refusal,1.5B vs 0.5B,role_framing,6,3,0.5078125
+correct_refusal,1.5B vs 0.5B,prefix_steering,1,0,1.0
+over_refusal,role_framing vs direct,qwen2.5-0.5b,2,1,1.0
+over_refusal,prefix_steering vs direct,qwen2.5-0.5b,0,2,0.5
+over_refusal,role_framing vs direct,qwen2.5-1.5b,0,4,0.125
+over_refusal,prefix_steering vs direct,qwen2.5-1.5b,0,6,0.03125
+over_refusal,1.5B vs 0.5B,direct,5,1,0.21875
+over_refusal,1.5B vs 0.5B,role_framing,0,1,1.0
+over_refusal,1.5B vs 0.5B,prefix_steering,0,0,1.0

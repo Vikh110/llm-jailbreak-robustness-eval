@@ -1,0 +1,7 @@
+version: 2
+updates:
+  # Keep the CI actions current. Python dependencies are pinned on purpose (they reproduce the original run).
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

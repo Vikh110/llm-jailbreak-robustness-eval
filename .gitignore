@@ -1,0 +1,26 @@
+# Model weights and dataset cache (about 5 GB). Recreate with 03_pipeline/00_download_models.py
+/models_cache
+
+# Local copies of the source papers (not redistributed)
+sources_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Guide build by-products (07_guide/check_layout.sh)
+07_guide/_diag/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+~$*

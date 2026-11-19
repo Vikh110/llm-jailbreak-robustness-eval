@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this evaluation, its data or its code, please cite it as below."
+type: software
+title: "Black-Box Evaluation of Jailbreak Robustness and Over-Refusal in Small Instruction-Tuned Language Models"
+abstract: >-
+  A frozen-protocol, black-box safety evaluation of Qwen2.5-0.5B-Instruct and
+  Qwen2.5-1.5B-Instruct on 20 matched harmful/benign JBB-Behaviors pairs under
+  three prompt conditions (240 responses), scored by Qwen3Guard-Gen-0.6B and
+  checked against a 60-response blind audit, with an independent verification
+  script that recomputes every reported number.
+authors:
+  - family-names: Khandelwal
+    given-names: Vishwas
+version: 1.0.0
+date-released: 2026-11-19
+license: MIT
+repository-code: "https://github.com/Vikh110/llm-jailbreak-robustness-eval"
+keywords:
+  - AI safety
+  - jailbreak
+  - over-refusal
+  - LLM evaluation
+  - LLM-as-a-judge
+  - red teaming
+  - reproducibility

@@ -1,6 +1,7 @@
 # Jailbreak Robustness, Over-Refusal and Judge Reliability in Small LLMs
 
 [![CI](https://github.com/Vikh110/llm-jailbreak-robustness-eval/actions/workflows/ci.yml/badge.svg)](https://github.com/Vikh110/llm-jailbreak-robustness-eval/actions/workflows/ci.yml)
+[![Full verification](https://github.com/Vikh110/llm-jailbreak-robustness-eval/actions/workflows/full-verification.yml/badge.svg)](https://github.com/Vikh110/llm-jailbreak-robustness-eval/actions/workflows/full-verification.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)](03_pipeline/requirements_frozen.txt)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Models](https://img.shields.io/badge/%F0%9F%A4%97%20models-Qwen2.5%20%7C%20Qwen3Guard-yellow)](https://huggingface.co/Qwen)
@@ -92,7 +93,7 @@ All 240 responses, the judge scores and the audit labels are in the repository. 
 - **Frozen protocol.** After a pilot on four held-out pairs, the prompts, templates, generation settings, judge mapping and rubric were frozen in [`freeze_manifest.json`](01_protocol/freeze_manifest.json). Nothing was added afterwards.
 - **Locked data.** The responses are stored with full metadata (rendered prompt, token counts, finish reason, environment) and a SHA-256 checksum.
 - **Independent verification.** [`07_verify.py`](03_pipeline/07_verify.py) recomputes every reported number through a separate, standard-library-only code path and runs **26 integrity checks**: hashes, design, prompts, judge mapping, every interval and p-value, the audit timing, and the kappas.
-- **Continuous integration.** On every push, CI runs the verification, re-runs the full analysis in a clean copy and checks that every table and `summary.json` match the committed results. A separate manual workflow downloads the pinned weights and checks their hashes.
+- **Continuous integration.** On every push, CI runs the verification, re-runs the full analysis in a clean copy and checks that every table and `summary.json` match the committed results. A separate workflow downloads the pinned model weights from Hugging Face onto a fresh GitHub runner and confirms that their SHA-256 hashes match the freeze manifest and that the verification report comes out identical.
 
 ### Verify the results (about a minute, no GPU)
 
